@@ -12,7 +12,7 @@ export function bootstrap(app: Express) {
     .then(() => {
       console.log("Database connected");
 
-      app.listen(port, () => console.log("Server is running in poer", port));
+      app.listen(port, () => console.log("Server is running in port", port));
     })
     .catch(() => {
       console.log("Databse failed to connect");
