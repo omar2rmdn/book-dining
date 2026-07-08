@@ -1,4 +1,4 @@
-import { type Document } from "mongoose";
+import { Types, type Document } from "mongoose";
 
 interface IUser extends Document {
   fullName: string;
@@ -8,4 +8,24 @@ interface IUser extends Document {
   role: "user" | "admin" | "owner";
 }
 
-export type { IUser };
+interface IRestaurant extends Document {
+  name: string;
+  slug: string;
+  description: string;
+  cuisine: string;
+  priceRange: "$" | "$$" | "$$$" | "$$$$";
+  rating: number;
+  reviewCount: number;
+  location: string;
+  address: string;
+  image: string;
+  chef: string;
+  tags: string[];
+  availableSlots: string[];
+  exclusive: boolean;
+  owner: Types.ObjectId;
+  status: "pending" | "approved" | "rejected";
+  totalSeats: number;
+}
+
+export type { IUser, IRestaurant };
